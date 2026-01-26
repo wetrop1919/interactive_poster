@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #fdfdfd;
+}
+
+/* большие картинки сверху */
+.top-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: #e6f4ff;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.big-image {
+  width: 200px;  /* делай больше/меньше по вкусу */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* меню под картинками */
+.menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #cfeef7;
+  padding: 15px;
+}
+
+.menu a {
+  text-decoration: none;
+  background: #aee3f8;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.menu a:hover {
+  background: #7fd6f3;
+}
+
+/* контент */
+.content {
+  padding: 20px;
+}
+
+/* Панель с кнопкой ESC */
+.esc-bar {
+  background: #cfeef7;
+  padding: 8px 15px;
+  text-align: right;
+}
+
+.esc-btn {
+  display: inline-block;
+  background: #ff4d4d;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.esc-btn:hover {
+  background: #cc0000;
+}

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Games – Викторина</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css_games.css">
+  <style>
+    .quiz-block {
+      margin-bottom: 25px;
+      padding: 15px;
+      border-radius: 10px;
+      background: #f0f8ff;
+      border: 2px solid #a0c8e0;
+    }
+    .quiz-block h3 {
+      margin-top: 0;
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .answers button {
+      width: auto;
+    }
+    #quiz-translated { display: none; }
+    .translate-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      background: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .translate-btn:hover { background: #388E3C; }
+  </style>
+</head>
+<body>
+  <div class="esc-bar">
+    <a href="index.html" class="esc-btn">ESC</a>
+  </div>
+
+  <header class="top-images">
+    <img src="flag.png" alt="Flag" class="big-image">
+    <img src="map.png" alt="Map" class="big-image">
+    <img src="portrait.jpg" alt="Portrait" class="big-image">
+  </header>
+
+  <div class="quiz-container">
+    <h1 style="text-align:center;">📝 Викторина</h1>
+
+    <!-- Первая викторина -->
+    <div id="quiz-original"></div>
+    <div id="result-original" class="result"></div>
+
+    <!-- Вторая викторина -->
+    <div id="quiz-translated"></div>
+    <div id="result-translated" class="result"></div>
+
+    <button class="translate-btn" id="translate-btn">Перевод</button>
+  </div>
+
+  <script>
+    // ✅ оригинальные вопросы
+    const questionsOriginal = [
+      {question: "Столица Беларуси?", answers: ["Могилёв", "Гомель", "Минск"], correct: 2},
+      {question: "Длина границы Беларуси?", answers: ["3568", "1545", "3617", "2758"], correct: 2},
+      // ⬇⬇ Третий вопрос — несколько правильных
+      {question: "Какие города находятся в Беларуси?", answers: ["Минск", "Москва", "Гомель"], correct: [0,2]},
+      {question: "Язык этого сайта?", answers: ["HTML", "Python", "C++"], correct: 0}
+    ];
+
+    // ✅ перевод (например, английский)
+    const questionsTranslated = [
+      {question: "Capital of Belarus?", answers: ["Mogilev", "Gomel", "Minsk"], correct: 2},
+      {question: "Length of the Belarus border?", answers: ["3568", "1545", "3617", "2758"], correct: 2},
+      {question: "Which cities are in Belarus?", answers: ["Minsk", "Moscow", "Gomel"], correct: [0,2]},
+      {question: "Language of this site?", answers: ["HTML", "Python", "C++"], correct: 0}
+    ];
+
+    function renderQuiz(containerId, resultId, questions) {
+      let score = 0;
+      const quizEl = document.getElementById(containerId);
+      const resultEl = document.getElementById(resultId);
+
+      questions.forEach((q, qi) => {
+        const block = document.createElement("div");
+        block.classList.add("quiz-block");
+
+        const title = document.createElement("h3");
+        title.textContent = (qi+1) + ". " + q.question;
+        block.appendChild(title);
+
+        const answersDiv = document.createElement("div");
+        answersDiv.classList.add("answers");
+
+        // временное хранилище выбранных ответов
+        let selected = [];
+
+        q.answers.forEach((ans, ai) => {
+          const btn = document.createElement("button");
+          btn.textContent = ans;
+
+          btn.addEventListener("click", () => {
+            // если correct массив → разрешаем несколько кликов
+            if (Array.isArray(q.correct)) {
+              if (selected.includes(ai)) return; // не добавляем повтор
+              selected.push(ai);
+              // когда выбрали столько же, сколько правильных → проверяем
+              if (selected.length === q.correct.length) {
+                const buttons = answersDiv.querySelectorAll("button");
+                buttons.forEach((b, i) => {
+                  b.disabled = true;
+                  if (q.correct.includes(i)) b.classList.add("correct");
+                  if (selected.includes(i) && !q.correct.includes(i)) b.classList.add("wrong");
+                });
+                // проверка совпадения множеств
+                if (JSON.stringify([...selected].sort()) === JSON.stringify([...q.correct].sort())) {
+                  score++;
+                }
+                if (document.querySelectorAll(`#${containerId} .answers button:not([disabled])`).length === 0) {
+                  resultEl.textContent = `Ты ответил правильно на ${score} из ${questions.length} вопросов 🎉`;
+                }
+              }
+            } else {
+              // обычный режим: один правильный ответ
+              const buttons = answersDiv.querySelectorAll("button");
+              buttons.forEach((b, i) => {
+                b.disabled = true;
+                if (i === q.correct) b.classList.add("correct");
+                if (i === ai && ai !== q.correct) b.classList.add("wrong");
+              });
+              if (ai === q.correct) score++;
+              if (document.querySelectorAll(`#${containerId} .answers button:not([disabled])`).length === 0) {
+                resultEl.textContent = `Ты ответил правильно на ${score} из ${questions.length} вопросов 🎉`;
+              }
+            }
+          });
+
+          answersDiv.appendChild(btn);
+        });
+
+        block.appendChild(answersDiv);
+        quizEl.appendChild(block);
+      });
+    }
+
+    // оригинал
+    renderQuiz("quiz-original", "result-original", questionsOriginal);
+
+    // кнопка Перевод
+    const translateBtn = document.getElementById("translate-btn");
+    translateBtn.addEventListener("click", () => {
+      document.getElementById("quiz-original").style.display = "none";
+      document.getElementById("result-original").style.display = "none";
+      translateBtn.style.display = "none";
+      document.getElementById("quiz-translated").style.display = "block";
+      document.getElementById("result-translated").style.display = "block";
+      renderQuiz("quiz-translated", "result-translated", questionsTranslated);
+    });
+  </script>
+</body>
+</html>

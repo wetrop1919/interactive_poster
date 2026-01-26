@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* общий стиль для красивого текста */
+	.fancy-text {
+	  font-family: "Georgia", serif;
+	  font-size: 1.5em;
+	  text-align: center;
+	  margin: 20px auto;
+	  max-width: 600px;
+	  padding: 20px;
+	  border-radius: 10px;
+	  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	}
+
+	/* первый текст: светлый фон */
+	.light-box {
+	  background: #f0f8ff; /* чуть светлее чем фон картинок */
+	  border: 2px solid #a0c8e0;
+	  color: #222;
+	}
+
+	/* второй текст: более тёмный фон */
+	.dark-box {
+	  background: #e8f6fa; /* чуть темнее чем первый */
+	  border: 2px solid #e8f6fa;
+	  color: #111;
+	  display: none; /* скрыт изначально */
+	}
+
+	/* кнопка */
+	.translate-btn {
+	  display: block;
+	  margin: 15px auto;
+	  padding: 10px 20px;
+	  font-size: 1em;
+	  font-weight: bold;
+	  background: #4CAF50;
+	  color: #fff;
+	  border: none;
+	  border-radius: 6px;
+	  cursor: pointer;
+	  transition: background 0.2s;
+	}
+
+	.translate-btn:hover {
+	  background: #388E3C;
+	}
+  </style>
+</head>
+<body>
+  <!-- Кнопка ESC -->
+  <div class="esc-bar">
+    <a href="html.html" class="esc-btn">ESC</a>
+  </div>
+
+  <!-- Картинки сверху -->
+  <header class="top-images">
+    <img src="flag.png" alt="Flag" class="big-image">
+    <img src="map.png" alt="Map" class="big-image">
+    <img src="portrait.jpg" alt="Portrait" class="big-image">
+  </header>
+
+  <!-- Меню -->
+  <nav class="menu">
+  </nav>
+
+  <!-- Контент -->
+  <main class="content">
+    <div class="fancy-text" id="original-text">
+      🌟 Belarus is a country in eastern Europe, lacking maritime resources but rich in forests, rivers, and lakes. It borders five countries: Russia, Ukraine, Poland, Lithuania, and Latvia. This location makes Belarus a link between the West and the East.
+The population of Belarus is approximately 9 million. The majority are Belarusians, but there are also Russians, Poles, Ukrainians, and other nationalities. The people here are friendly, hardworking, and value peace and quiet.
+Mogilev is my hometown, the third largest, with a rich history and a beautiful riverfront.
+Belarus is a land of plains, forests, and swamps. Major rivers flow through it. Lakes Naroch, Svir, and Chernoye are popular recreation areas. Forests cover approximately 40% of the territory, and Belovezhskaya Pushcha is one of the oldest forests in Europe, protected by UNESCO. 🌟
+    </div>
+
+    <button class="translate-btn" id="translate-btn">Перевод</button>
+
+    <div class="fancy-text dark-box" id="translated-text">
+      ✨ Беларусь — страна в Восточной Европе, лишенная морских ресурсов, но богатая лесами, реками и озерами. Она граничит с пятью странами: Россией, Украиной, Польшей, Литвой и Латвией. Благодаря своему расположению Беларусь является связующим звеном между Западом и Востоком.
+Население Беларуси составляет около 9 миллионов человек. Большинство населения — белорусы, но есть также русские, поляки, украинцы и представители других национальностей. Люди здесь дружелюбны, трудолюбивы и ценят тишину и покой.
+Могилев — мой родной город, третий по величине, с богатой историей и красивой речной набережной.
+Беларусь — страна равнин, лесов и болот. Через неё протекают крупные реки. Озера Нарочь, Свирь и Чёрное — популярные места отдыха. Леса покрывают около 40% территории, а Беловежская пуща — один из старейших лесов Европы, находящийся под защитой ЮНЕСКО. ✨
+    </div>
+  </main>
+
+  <script>
+    const btn = document.getElementById("translate-btn");
+    const translated = document.getElementById("translated-text");
+
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";      // кнопка исчезает
+      translated.style.display = "block"; // показываем перевод
+    });
+  </script>
+</body>
+</html>

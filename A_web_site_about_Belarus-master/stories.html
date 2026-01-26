@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* общий стиль для красивого текста */
+	.fancy-text {
+	  font-family: "Georgia", serif;
+	  font-size: 1.5em;
+	  text-align: center;
+	  margin: 20px auto;
+	  max-width: 600px;
+	  padding: 20px;
+	  border-radius: 10px;
+	  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	}
+
+	/* первый текст: светлый фон */
+	.light-box {
+	  background: #f0f8ff; /* чуть светлее чем фон картинок */
+	  border: 2px solid #a0c8e0;
+	  color: #222;
+	}
+
+	/* второй текст: более тёмный фон */
+	.dark-box {
+	  background: #e8f6fa; /* чуть темнее чем первый */
+	  border: 2px solid #e8f6fa;
+	  color: #111;
+	  display: none; /* скрыт изначально */
+	}
+
+	/* кнопка */
+	.translate-btn {
+	  display: block;
+	  margin: 15px auto;
+	  padding: 10px 20px;
+	  font-size: 1em;
+	  font-weight: bold;
+	  background: #4CAF50;
+	  color: #fff;
+	  border: none;
+	  border-radius: 6px;
+	  cursor: pointer;
+	  transition: background 0.2s;
+	}
+
+	.translate-btn:hover {
+	  background: #388E3C;
+	}
+  </style>
+</head>
+<body>
+  <!-- Кнопка ESC -->
+  <div class="esc-bar">
+    <a href="html.html" class="esc-btn">ESC</a>
+  </div>
+
+  <!-- Картинки сверху -->
+  <header class="top-images">
+    <img src="flag.png" alt="Flag" class="big-image">
+    <img src="map.png" alt="Map" class="big-image">
+    <img src="portrait.jpg" alt="Portrait" class="big-image">
+  </header>
+
+  <!-- Меню -->
+  <nav class="menu">
+  </nav>
+
+  <!-- Контент -->
+  <main class="content">
+    <div class="fancy-text" id="original-text">
+      🌟 In a place called Belarus, there was no name, and a beautiful girl named Nara lived nearby. One day, she was sitting on the shore, admiring the water's surface. A widower approached her and made her acquaintance. He was so captivated by the young woman that he immediately proposed marriage. But she was instantly rejected. It turned out that the beauty loved a young man, whom she soon planned to marry. She absolutely refused to marry the older man who had treated her lover so badly. Just as wedding preparations were in full swing, she found a way to set the castle on fire. She then fled. Palace servants sent in pursuit managed to catch the girl only on the shore of a large lake, where Nara's widower had once met her. However, the man was unable to bring her back. The beauty chose to throw herself into the water and drown. Since then, the lake has been named after the girl – Nara. 🌟
+    </div>
+
+    <button class="translate-btn" id="translate-btn">Перевод</button>
+
+    <div class="fancy-text dark-box" id="translated-text">
+      ✨ Беларуси, не было названия, жила вблизи него красивая девушка по имени Нара. В один день сидела она на берегу и любовалась водной гладью. Подошел к ней пан-вдовец, познакомился. Так очаровался юной девицей, что сразу же предложил ей стать своей женой. Но получил моментальный отказ. Оказывается, любила красавица молодого парня, за которого в скором времени собиралась выйти замуж.Она ни в какую не хотела идти в жены взрослого пана, который так поступил с ее любимым. В момент, когда подготовка в венчанию шла полным ходом, она нашла способ и совершила поджог замка. А сама сбежала. Посланным вдогонку дворцовым слугам удалось нагнать девушку лишь на берегу большого озера, у которого и повстречал в свое время вдовец Нары. Однако вернуть ее пану не удалось. Красавица предпочла броситься в воду и утонуть. С тех пор озеро именуют в честь девушки – Нара. Разгневанный вдовец не потерпел обиды и вскорости приказал найти и убить жениха Нары, а саму девушку доставить к нему. Так и поступили бравые слуги пана. ✨
+    </div>
+  </main>
+
+  <script>
+    const btn = document.getElementById("translate-btn");
+    const translated = document.getElementById("translated-text");
+
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";      // кнопка исчезает
+      translated.style.display = "block"; // показываем перевод
+    });
+  </script>
+</body>
+</html>
