@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* общий стиль для красивого текста */
+	.fancy-text {
+	  font-family: "Georgia", serif;
+	  font-size: 1.5em;
+	  text-align: center;
+	  margin: 20px auto;
+	  max-width: 600px;
+	  padding: 20px;
+	  border-radius: 10px;
+	  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	}
+
+	/* первый текст: светлый фон */
+	.light-box {
+	  background: #f0f8ff; /* чуть светлее чем фон картинок */
+	  border: 2px solid #a0c8e0;
+	  color: #222;
+	}
+
+	/* второй текст: более тёмный фон */
+	.dark-box {
+	  background: #e8f6fa; /* чуть темнее чем первый */
+	  border: 2px solid #e8f6fa;
+	  color: #111;
+	  display: none; /* скрыт изначально */
+	}
+
+	/* кнопка */
+	.translate-btn {
+	  display: block;
+	  margin: 15px auto;
+	  padding: 10px 20px;
+	  font-size: 1em;
+	  font-weight: bold;
+	  background: #4CAF50;
+	  color: #fff;
+	  border: none;
+	  border-radius: 6px;
+	  cursor: pointer;
+	  transition: background 0.2s;
+	}
+
+	.translate-btn:hover {
+	  background: #388E3C;
+	}
+  </style>
+</head>
+<body>
+  <!-- Кнопка ESC -->
+  <div class="esc-bar">
+    <a href="html.html" class="esc-btn">ESC</a>
+  </div>
+
+  <!-- Картинки сверху -->
+  <header class="top-images">
+    <img src="flag.png" alt="Flag" class="big-image">
+    <img src="map.png" alt="Map" class="big-image">
+    <img src="portrait.jpg" alt="Portrait" class="big-image">
+  </header>
+
+  <!-- Меню -->
+  <nav class="menu">
+  </nav>
+
+  <!-- Контент -->
+  <main class="content">
+    <div class="fancy-text" id="original-text">
+      🌟 My home is in Belarus. I am proud of it and will continue to be proud that I am a citizen of such a beautiful and good country. Belarus is my homeland. It is a wonderful country with green forests, clean rivers and kind people. I was born, raised and learned to live here. I like our peaceful way of life, when the morning begins with the sound of birds, and the evening ends with the quiet whisper of the wind in the leaves. 🌟
+    </div>
+
+    <button class="translate-btn" id="translate-btn">Перевод</button>
+
+    <div class="fancy-text dark-box" id="translated-text">
+      ✨ Мой дом находится в Беларуси. Я этим горжусь и буду дальше гордиться что я гражданин такой красивой, и хорошой страны. Беларусь — моя родина. Это чудесная страна с зелёными лесами, чистыми реками и добрыми людьми. Я родился, вырос и научился жить здесь. Мне нравится наш мирный уклад жизни, когда утро начинается с пения птиц, а вечер заканчивается тихим шепотом ветра в листве. ✨
+    </div>
+  </main>
+
+  <script>
+    const btn = document.getElementById("translate-btn");
+    const translated = document.getElementById("translated-text");
+
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";      // кнопка исчезает
+      translated.style.display = "block"; // показываем перевод
+    });
+  </script>
+</body>
+</html>

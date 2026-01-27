@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* общий стиль для красивого текста */
+	.fancy-text {
+	  font-family: "Georgia", serif;
+	  font-size: 1.5em;
+	  text-align: center;
+	  margin: 20px auto;
+	  max-width: 600px;
+	  padding: 20px;
+	  border-radius: 10px;
+	  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+	}
+
+	/* первый текст: светлый фон */
+	.light-box {
+	  background: #f0f8ff; /* чуть светлее чем фон картинок */
+	  border: 2px solid #a0c8e0;
+	  color: #222;
+	}
+
+	/* второй текст: более тёмный фон */
+	.dark-box {
+	  background: #e8f6fa; /* чуть темнее чем первый */
+	  border: 2px solid #e8f6fa;
+	  color: #111;
+	  display: none; /* скрыт изначально */
+	}
+
+	/* кнопка */
+	.translate-btn {
+	  display: block;
+	  margin: 15px auto;
+	  padding: 10px 20px;
+	  font-size: 1em;
+	  font-weight: bold;
+	  background: #4CAF50;
+	  color: #fff;
+	  border: none;
+	  border-radius: 6px;
+	  cursor: pointer;
+	  transition: background 0.2s;
+	}
+
+	.translate-btn:hover {
+	  background: #388E3C;
+	}
+  </style>
+</head>
+<body>
+  <!-- Кнопка ESC -->
+  <div class="esc-bar">
+    <a href="html.html" class="esc-btn">ESC</a>
+  </div>
+
+  <!-- Картинки сверху -->
+  <header class="top-images">
+    <img src="flag.png" alt="Flag" class="big-image">
+    <img src="map.png" alt="Map" class="big-image">
+    <img src="portrait.jpg" alt="Portrait" class="big-image">
+  </header>
+
+  <!-- Меню -->
+  <nav class="menu">
+  </nav>
+
+  <!-- Контент -->
+  <main class="content">
+    <div class="fancy-text" id="original-text">
+      🌟 Belarus is an amazing country, rich in nature, beauty, and culture. There are many places worth visiting to connect with your soul and beauty.
+Each city in Belarus is like a separate chapter in a history book. Minsk, the country's capital, amazes with its blend of modernity and Soviet architecture.
+One of the most unique places in Belarus is Belovezhskaya Pushcha. This ancient forest is home to centuries-old oaks, bison, and the true tranquility of nature.
+Mogilev is a city in eastern Belarus where I live. It's cozy, green, and peaceful. We have a beautiful embankment along the Dnieper River, where it's pleasant to stroll in the evening. In the city center is the Square of Stars, a theater, museums, and monuments that tell the story of a rich history. Mogilev is a place where you feel at home. My family and friends live here, and it's where my dreams begin. 🌟
+    </div>
+
+    <button class="translate-btn" id="translate-btn">Перевод</button>
+
+    <div class="fancy-text dark-box" id="translated-text">
+      ✨ Беларусь — удивительная страна, богатая природа, красота и культура. Здесь есть множество мест, которые стоит посетить, чтобы ощутить свою душу и красоту.
+Каждый город Беларуси — как отдельная глава в книге истории. Минск, столица страны, поражает сочетанием современности и советской архитектуры.
+Одно из самых уникальных мест Беларуси — Беловежская пуща. Это древний лес, где растут вековые дубы, живут зубры и царит настоящая тишина природы.
+Могилёв — город на востоке Беларуси, где я живу. Он уютный, зелёный и спокойный. У нас есть красивая набережная реки Днепр, где приятно гулять вечером. В центре города — площадь Звёзд, театр, музеи и памятники, рассказывающие о богатой истории. Могилёв — это место, где чувствуешь себя дома. Здесь живёт моя семья, мои друзья, и именно отсюда начинаются мои мечт ✨
+    </div>
+  </main>
+
+  <script>
+    const btn = document.getElementById("translate-btn");
+    const translated = document.getElementById("translated-text");
+
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";      // кнопка исчезает
+      translated.style.display = "block"; // показываем перевод
+    });
+  </script>
+</body>
+</html>
