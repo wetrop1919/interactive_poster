@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Два столбца */
+    gap: 40px; /* Расстояние между кнопками */
+}
+
+.button {
+    display: inline-block;
+    padding: 0.8em 2em;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+    position: relative; /* Для позиционирования стрелочки */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+
+.button::after {
+    content: "➔"; /* Стрелочка */
+    margin-left: 10px; /* Расстояние между текстом и стрелочкой */
+    font-size: 1.5em; /* Размер стрелочки */
+    color: #000; /* Цвет стрелочки */
+    position: absolute; /* Позиционирование стрелочки */
+    right: 10px; /* Отступ от правого края кнопки */
+    top: 50%; /* Центрирование по вертикали */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+}

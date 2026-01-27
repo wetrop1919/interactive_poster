@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Экскурсии и посещения предприятий</title>
+    <link rel="stylesheet" href="prof_styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Фоновое изображение -->
+    <div class="background-image"></div>
+    
+    <!-- Основной контент -->
+    <div class="main-container">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="back-button">
+                <a href="main2.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Назад
+                </a>
+            </div>
+            <h1 class="page-title">Посещение предприятий и учебных заведений</h1>
+            <p class="page-subtitle">Экскурсии наших учеников на заводы, предприятия и вузы</p>
+        </header>
+
+        <!-- Фильтры -->
+        <section class="filters-section">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все экскурсии</button>
+                <button class="filter-btn" data-filter="factory">Заводы</button>
+                <button class="filter-btn" data-filter="company">Предприятия</button>
+                <button class="filter-btn" data-filter="class-10">10 класс</button>
+                <button class="filter-btn" data-filter="class-11">11 класс</button>
+                <button class="filter-btn" data-filter="recent">Последние</button>
+            </div>
+            
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-input" placeholder="Поиск по названию или классу...">
+            </div>
+        </section>
+
+        <!-- Вертикальная колонка с экскурсиями -->
+        <section class="excursions-column">
+            <!-- Вертикальный контейнер -->
+            <div class="vertical-excursions-container">
+                <!-- Экскурсия 1 -->
+                <div class="vertical-excursion-card" data-category="factory class-9">
+                    <div class="excursion-image-col">
+                        <img src="auto_plant.jpg" alt="Театр кукол">
+                        <div class="excursion-type">Театр кукол</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">9А класс</span>
+                            <span class="excursion-date">25.01.2026</span>
+                        </div>
+                        <h3>Могилеёвский обласной театр кукол"</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Могилев</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>10 учеников</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>2 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">25 января в Могилевском областном театре кукол для взрослых и детей прошел мастер - класс  по кукловождению. Участником мастер-класса стала учащаяся 9 «А» класса Платоненко Анастасия.
+Участники мероприятия познакомились с разными видами театральных кукол, узнали, как вдохнуть в куклу характер, эмоции и жизнь. Настя попробовала себя в роли кукловода в небольшом импровизированном этюде про репку, а ещё посмотрела увлекательный спектакль «Приключения Джека Воробья».</p>
+                        <div class="professions">
+                            <span class="profession-tag">Актёр</span>
+                            <span class="profession-tag">Кукловод</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 2 -->
+                <div class="vertical-excursion-card" data-category="university class-11">
+                    <div class="excursion-image-col">
+                        <img src="university_it.jpg" alt="Суд Ленинского района">
+                        <div class="excursion-type">Суд Ленинского района</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">9-11 классы</span>
+                            <span class="excursion-date">2.12.2025</span>
+                        </div>
+                        <h3>Суд Ленинского района города Могилева</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Могилев</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>23 учеников</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>3 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">В рамках профориентационной работы ученики 9 и 11 классов посетили Суд Ленинского района города Могилева. Эта познавательная экскурсия стала для ребят уникальной возможностью изнутри увидеть работу судебной системы и получить представление о профессии юриста.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Юрист</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 3 -->
+                <div class="vertical-excursion-card" data-category="company class-10 recent">
+                    <div class="excursion-image-col">
+                        <img src="hospital.jpg" alt="Больница">
+                        <div class="excursion-type">Медицина</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">10В класс</span>
+                            <span class="excursion-date">05.04.2024</span>
+                        </div>
+                        <h3>Городская клиническая больница №1</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Санкт-Петербург</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>20 учеников</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>5 часов</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Экскурсия по отделениям больницы, знакомство с работой врачей различных специальностей, посещение учебного центра для медсестер.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Врач</span>
+                            <span class="profession-tag">Хирург</span>
+                            <span class="profession-tag">Медсестра</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 4 -->
+                <div class="vertical-excursion-card" data-category="factory class-11">
+                    <div class="excursion-image-col">
+                        <img src="food_factory.jpg" alt="Пищевой комбинат">
+                        <div class="excursion-type">Пищевое производство</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">11А класс</span>
+                            <span class="excursion-date">18.02.2024</span>
+                        </div>
+                        <h3>Пищевой комбинат "Вкусные традиции"</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Казань</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>22 ученика</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>4 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Знакомство с процессами производства продуктов питания, контроль качества, работа технологов пищевой промышленности.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Технолог</span>
+                            <span class="profession-tag">Лаборант</span>
+                            <span class="profession-tag">Инженер</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 5 -->
+                <div class="vertical-excursion-card" data-category="university class-10 recent">
+                    <div class="excursion-image-col">
+                        <img src="construction_university.jpg" alt="Строительный университет">
+                        <div class="excursion-type">Университет</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">10Б класс</span>
+                            <span class="excursion-date">28.03.2024</span>
+                        </div>
+                        <h3>Строительный университет</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Екатеринбург</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>24 ученика</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>3.5 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Посещение лабораторий, знакомство со специальностями архитектора, строителя, проектировщика. Практикум по 3D-моделированию.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Архитектор</span>
+                            <span class="profession-tag">Строитель</span>
+                            <span class="profession-tag">Проектировщик</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 6 -->
+                <div class="vertical-excursion-card" data-category="company class-11">
+                    <div class="excursion-image-col">
+                        <img src="bank.jpg" alt="Банк">
+                        <div class="excursion-type">Финансы</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">11В класс</span>
+                            <span class="excursion-date">12.01.2024</span>
+                        </div>
+                        <h3>Центральный банк</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Москва</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>16 учеников</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>3 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Экскурсия по музею денег, знакомство с работой экономистов, финансистов, аналитиков. Лекция о финансовой грамотности.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Экономист</span>
+                            <span class="profession-tag">Финансист</span>
+                            <span class="profession-tag">Аналитик</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 7 -->
+                <div class="vertical-excursion-card" data-category="factory class-10">
+                    <div class="excursion-image-col">
+                        <img src="energy_plant.jpg" alt="Электростанция">
+                        <div class="excursion-type">Энергетика</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">10Г класс</span>
+                            <span class="excursion-date">08.02.2024</span>
+                        </div>
+                        <h3>Тепловая электростанция</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Новосибирск</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>19 учеников</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>4.5 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Знакомство с работой энергетиков, инженеров-электриков, экологов. Посещение диспетчерского центра и турбинного цеха.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Энергетик</span>
+                            <span class="profession-tag">Инженер</span>
+                            <span class="profession-tag">Эколог</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 8 -->
+                <div class="vertical-excursion-card" data-category="university class-11 recent">
+                    <div class="excursion-image-col">
+                        <img src="pedagogical_university.jpg" alt="Педагогический университет">
+                        <div class="excursion-type">Университет</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">11А класс</span>
+                            <span class="excursion-date">25.03.2024</span>
+                        </div>
+                        <h3>Педагогический университет</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Ростов-на-Дону</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>21 ученик</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>3 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Знакомство с факультетами педагогики и психологии. Участие в мастер-классе по современным методам преподавания.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Учитель</span>
+                            <span class="profession-tag">Психолог</span>
+                            <span class="profession-tag">Воспитатель</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 9 -->
+                <div class="vertical-excursion-card" data-category="factory class-11">
+                    <div class="excursion-image-col">
+                        <img src="airport.jpg" alt="Аэропорт">
+                        <div class="excursion-type">Транспорт</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">11Б класс</span>
+                            <span class="excursion-date">14.04.2024</span>
+                        </div>
+                        <h3>Международный аэропорт</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Сочи</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>23 ученика</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>4 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Экскурсия по терминалам, знакомство с работой диспетчеров, пилотов, бортпроводников, службы безопасности.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Пилот</span>
+                            <span class="profession-tag">Диспетчер</span>
+                            <span class="profession-tag">Бортпроводник</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 10 -->
+                <div class="vertical-excursion-card" data-category="company class-10">
+                    <div class="excursion-image-col">
+                        <img src="tv_studio.jpg" alt="Телестудия">
+                        <div class="excursion-type">Медиа</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">10А класс</span>
+                            <span class="excursion-date">30.03.2024</span>
+                        </div>
+                        <h3>Телевизионная студия</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Москва</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>17 учеников</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>3 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Знакомство с работой тележурналистов, операторов, режиссеров, монтажеров. Практическое занятие в студии.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Журналист</span>
+                            <span class="profession-tag">Оператор</span>
+                            <span class="profession-tag">Режиссер</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 11 -->
+                <div class="vertical-excursion-card" data-category="university class-11">
+                    <div class="excursion-image-col">
+                        <img src="agricultural_university.jpg" alt="Аграрный университет">
+                        <div class="excursion-type">Университет</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">11В класс</span>
+                            <span class="excursion-date">07.04.2024</span>
+                        </div>
+                        <h3>Аграрный университет</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Краснодар</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>20 учеников</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>4 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Знакомство с факультетами агрономии, ветеринарии, пищевых технологий. Посещение учебной фермы и лабораторий.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Агроном</span>
+                            <span class="profession-tag">Ветеринар</span>
+                            <span class="profession-tag">Технолог</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 12 -->
+                <div class="vertical-excursion-card" data-category="factory class-10 recent">
+                    <div class="excursion-image-col">
+                        <img src="pharmacy_factory.jpg" alt="Фармацевтический завод">
+                        <div class="excursion-type">Фармацевтика</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">10Б класс</span>
+                            <span class="excursion-date">19.04.2024</span>
+                        </div>
+                        <h3>Фармацевтический завод</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Уфа</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>18 учеников</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>3.5 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Знакомство с процессами производства лекарств, контроль качества, работа фармацевтов и химиков-технологов.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Фармацевт</span>
+                            <span class="profession-tag">Химик</span>
+                            <span class="profession-tag">Технолог</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 13 -->
+                <div class="vertical-excursion-card" data-category="company class-11">
+                    <div class="excursion-image-col">
+                        <img src="it_company.jpg" alt="ИТ-компания">
+                        <div class="excursion-type">IT</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">11А класс</span>
+                            <span class="excursion-date">26.04.2024</span>
+                        </div>
+                        <h3>Крупная IT-компания</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Казань</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>15 учеников</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>3 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Знакомство с работой программистов, тестировщиков, аналитиков, дизайнеров. Мастер-класс по веб-разработке.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Программист</span>
+                            <span class="profession-tag">Дизайнер</span>
+                            <span class="profession-tag">Аналитик</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 14 -->
+                <div class="vertical-excursion-card" data-category="university class-10">
+                    <div class="excursion-image-col">
+                        <img src="law_university.jpg" alt="Юридический университет">
+                        <div class="excursion-type">Университет</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">10В класс</span>
+                            <span class="excursion-date">02.05.2024</span>
+                        </div>
+                        <h3>Юридический университет</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Санкт-Петербург</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>22 ученика</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>3 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Знакомство с факультетами права, криминалистики, международных отношений. Участие в модельном судебном процессе.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Юрист</span>
+                            <span class="profession-tag">Адвокат</span>
+                            <span class="profession-tag">Криминалист</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Экскурсия 15 -->
+                <div class="vertical-excursion-card" data-category="factory class-11 recent">
+                    <div class="excursion-image-col">
+                        <img src="shipyard.jpg" alt="Судостроительный завод">
+                        <div class="excursion-type">Судостроение</div>
+                    </div>
+                    <div class="excursion-content-col">
+                        <div class="excursion-header">
+                            <span class="excursion-class">11Б класс</span>
+                            <span class="excursion-date">09.05.2024</span>
+                        </div>
+                        <h3>Судостроительный завод</h3>
+                        <div class="excursion-details">
+                            <div class="detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>г. Владивосток</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>20 учеников</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>4.5 часа</span>
+                            </div>
+                        </div>
+                        <p class="excursion-description">Экскурсия по верфи, знакомство с процессами судостроения, профессиями кораблестроителей, инженеров-конструкторов.</p>
+                        <div class="professions">
+                            <span class="profession-tag">Кораблестроитель</span>
+                            <span class="profession-tag">Инженер</span>
+                            <span class="profession-tag">Сварщик</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Статистика -->
+        <section class="stats-section">
+            <h2 class="section-title">Статистика посещений</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>54</h3>
+                        <p>Предприятия</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>28</h3>
+                        <p>Учебных заведений</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1,250</h3>
+                        <p>Учеников посетили</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>15</h3>
+                        <p>Городов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма для новых экскурсий -->
+        <section class="add-excursion-section">
+            <h2 class="section-title">Предложить новую экскурсию</h2>
+            
+            <form class="excursion-form" id="excursion-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="excursion-name">Название предприятия/учебного заведения</label>
+                        <input type="text" id="excursion-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="excursion-class">Класс</label>
+                        <select id="excursion-class" required>
+                            <option value="">Выберите класс</option>
+                            <option value="10">10 класс</option>
+                            <option value="11">11 класс</option>
+                            <option value="both">10 и 11 классы</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="excursion-type">Тип</label>
+                        <select id="excursion-type" required>
+                            <option value="">Выберите тип</option>
+                            <option value="factory">Завод/Предприятие</option>
+                            <option value="company">Компания/Организация</option>
+                            <option value="university">Учебное заведение</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="excursion-city">Город</label>
+                        <input type="text" id="excursion-city" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="excursion-description">Описание и польза от экскурсии</label>
+                    <textarea id="excursion-description" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Отправить предложение</button>
+            </form>
+        </section>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <p>© 2024 Профориентационный портал. Все права защищены.</p>
+            <p>По вопросам организации экскурсий: <a href="mailto:excursions@profportal.ru">excursions@profportal.ru</a></p>
+        </footer>
+    </div>
+
+    <script src="prof_script.js"></script>
+</body>
+</html>
