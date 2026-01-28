@@ -1,0 +1,430 @@
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+    color: #333;
+}
+
+/* Фоновое изображение */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0c2461 0%, #1e3799 100%);
+    z-index: -1;
+    opacity: 0.9;
+}
+
+/* Затемнение фона для лучшей читаемости */
+.background-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+/* Основной контент */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Шапка */
+.header-section {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #1a252f;
+    transform: translateX(-3px);
+}
+
+.back-arrow {
+    font-size: 18px;
+}
+
+.page-title {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: #7f8c8d;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Верхние изображения */
+.top-images-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.top-image {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.top-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.top-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.top-image p {
+    font-size: 16px;
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Контейнер профессий */
+.professions-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Карточки профессий */
+.profession-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    border-top: 4px solid #3498db;
+}
+
+.profession-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-top-color: #e74c3c;
+}
+
+.profession-icon {
+    margin-bottom: 20px;
+}
+
+.profession-icon .icon {
+    font-size: 50px;
+    display: block;
+}
+
+.profession-title {
+    font-size: 22px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.profession-description {
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.profession-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.detail {
+    font-size: 14px;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
+
+.detail strong {
+    color: #2c3e50;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.learn-more-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Нижние изображения */
+.bottom-images-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.bottom-image {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.bottom-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.bottom-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.bottom-image p {
+    font-size: 16px;
+    color: #2c3e50;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Секция трендов */
+.trends-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 28px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #3498db;
+}
+
+.trends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.trend-card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    border-left: 4px solid #2ecc71;
+}
+
+.trend-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.trend-card h3 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.trend-card p {
+    color: #7f8c8d;
+    line-height: 1.5;
+}
+
+/* Футер */
+.footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Анимация при загрузке */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profession-card {
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.profession-card:nth-child(1) { animation-delay: 0.1s; }
+.profession-card:nth-child(2) { animation-delay: 0.2s; }
+.profession-card:nth-child(3) { animation-delay: 0.3s; }
+.profession-card:nth-child(4) { animation-delay: 0.4s; }
+.profession-card:nth-child(5) { animation-delay: 0.5s; }
+.profession-card:nth-child(6) { animation-delay: 0.6s; }
+.profession-card:nth-child(7) { animation-delay: 0.7s; }
+.profession-card:nth-child(8) { animation-delay: 0.8s; }
+.profession-card:nth-child(9) { animation-delay: 0.9s; }
+.profession-card:nth-child(10) { animation-delay: 1.0s; }
+.profession-card:nth-child(11) { animation-delay: 1.1s; }
+.profession-card:nth-child(12) { animation-delay: 1.2s; }
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .professions-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .main-container {
+        padding: 15px;
+    }
+    
+    .page-title {
+        font-size: 26px;
+        margin-top: 50px;
+    }
+    
+    .back-button {
+        position: static;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
+    
+    .header-section {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .professions-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .top-images-container,
+    .bottom-images-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .top-image,
+    .bottom-image {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .trends-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .page-title {
+        font-size: 22px;
+    }
+    
+    .profession-title {
+        font-size: 20px;
+    }
+    
+    .profession-description {
+        font-size: 14px;
+    }
+    
+    .learn-more-btn {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+}
