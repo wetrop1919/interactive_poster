@@ -157,6 +157,11 @@ body {
     font-weight: 700;
 }
 
+.text-highlight2 {
+    color: #228B22;
+    font-weight: 700;
+}
+
 .text-block p {
     font-size: 18px;
     color: #555;
