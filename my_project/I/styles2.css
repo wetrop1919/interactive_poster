@@ -52,10 +52,11 @@ body {
 .page-title {
     text-align: center;
     margin: 15px 0 35px 0;
-    color: #2c3e50;
-    font-size: 28px;
+    color: #354D73;
+    font-size: 50px;
     text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9);
-    font-weight: 600;
+	letter-spacing: 0.01em;
+    font-weight: 800;
 }
 
 /* Контейнеры для изображений */
@@ -70,7 +71,7 @@ body {
 .top-image {
     background: white;
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
     text-align: center;
     width: 280px;
